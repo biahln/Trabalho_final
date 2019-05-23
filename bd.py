@@ -4,3 +4,10 @@ def get_idlogin(cursor,login,senha):
     idlogin = cursor.fetchone()
     cursor.close()
     return idlogin
+
+def get_idbusca(cursor,bia):
+    cursor.execute(f'select idbusca from busca where carro = "{bia}"')
+
+    busca = cursor.fetchone()
+    cursor.close()
+    return busca

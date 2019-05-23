@@ -24,7 +24,7 @@ def adm():
         cursor = mysql.get_db().cursor()
         idlogin = get_idlogin(cursor, login, senha)
         if idlogin is None:
-            return render_template('first.html')
+            return render_template('first.html', erro='Usuário não cadastrado')
         else:
             return render_template('adm.html')
     else:
@@ -54,8 +54,20 @@ def anuncio_excluir():
 def editar_top10():
     return render_template('editar_top10.html')
 
+@app.route('/busca', methods=['GET','POST'])
+def busca ():
+    if request.method == 'POST':
+        oi = request.form.get('oi')
+        cursor = mysql.get_db().cursor()
+        teste = get_idbusca(cursor, oi)
 
-
+        if teste is None:
+            return render_template('first.html', erro='Nenhum carro encontrado')
+        else:
+            cursor = mysql.get_db().cursor()
+            return render_template('busca.html', busca=get_idbusca(cursor,oi))
+    else:
+        return render_template('first.html')
 
 
 if __name__ == '__main__':
