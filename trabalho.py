@@ -57,15 +57,15 @@ def editar_top10():
 @app.route('/busca', methods=['GET','POST'])
 def busca ():
     if request.method == 'POST':
-        oi = request.form.get('oi')
+        bia = request.form.get('bia')
         cursor = mysql.get_db().cursor()
-        teste = get_idbusca(cursor, oi)
+        teste = get_idbusca(cursor, bia)
 
         if teste is None:
             return render_template('first.html', erro='Nenhum carro encontrado')
         else:
             cursor = mysql.get_db().cursor()
-            return render_template('busca.html', busca=get_idbusca(cursor,oi))
+            return render_template('busca.html', busca=get_idbusca(cursor, bia))
     else:
         return render_template('first.html')
 
