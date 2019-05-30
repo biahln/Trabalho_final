@@ -6,8 +6,7 @@ def get_idlogin(cursor,login,senha):
     return idlogin
 
 def get_idbusca(cursor,bia):
-    cursor.execute(f'select carro from carro where carro = "{bia}"')
-
+    cursor.execute(f'select carro, cor, placa, ano, preco, marca from carro where carro = "{bia}"')
     busca = cursor.fetchone()
     cursor.close()
     return busca
