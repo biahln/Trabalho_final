@@ -10,3 +10,13 @@ def get_idbusca(cursor,bia):
     busca = cursor.fetchone()
     cursor.close()
     return busca
+
+def usuario_incluir(cursor,conn,login,senha):
+    cursor.execute(f'INSERT INTO login (login, senha) values("{login}","{senha}")')
+    conn.commit()
+
+def anuncio_incluir(cursor, conn, carro, cor, placa, ano, preco, marca):
+    cursor.execute(f'INSERT INTO carro (carro, cor, placa, ano, preco, marca) values("{carro}","{cor}","{placa}","{ano}","{preco}","{marca}")')
+    conn.commit()
+
+

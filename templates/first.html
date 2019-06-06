@@ -4,52 +4,17 @@
     <meta charset="UTF-8"/>
 
     <title>CONCESSIONÁRIA</title>
-
-    <style>
-        .container {
-  position: relative;
-  width: 50%;
-}
-
-.image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: red;
-}
-
-.container:hover .overlay {
-  opacity: 1;
-}
-
-.text {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-    </style>
-
 </head>
-<body>
-    <form id="'login", method="post", action="/adm">
+  <style>
+    #login {
+        color:white;
+    }
+    #buscar {
+        color:white;
+    }
+</style>
+<body background="http://getwallpapers.com/wallpaper/full/f/d/7/60132.jpg">
+    <form id="login", method="post", action="/adm">
         <label>
             login:
         </label>
@@ -61,17 +26,11 @@
         <input type="submit" name="botaologin" value="entrar">
     </form>
 
-    <form id="'buscar", method="post", action="/busca">
+    <form id="buscar", method="post", action="/busca">
         Buscar <input type="text" name="bia"> <br><br>
         <input type="submit" value="Buscar">
     </form>
 
 
-<div class="container">
-  <img src="https://www.importadoranet.com.br/wp-content/uploads/2015/03/Takeup-480x268.png" class="image">
-  <div class="overlay">
-    <div class="text"></div>
-  </div>
-</div>
-
 </body>
+</html>
